@@ -3,6 +3,12 @@ const limit = '10',
 
 console.log(url);
 
+const initOptions = {
+    headers: {
+        'x-api-key': 'a29d4998-73b2-476d-9f07-defd0544afae'
+    }
+};
+
 let output = '';
 
 function updateUI(data) {
@@ -14,7 +20,7 @@ function updateUI(data) {
     document.querySelector('#content').innerHTML = output;
 }
 
-fetch(url)
+fetch(url, initOptions)
 .then(function(response) {
     return response.json();
 })
